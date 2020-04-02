@@ -11,6 +11,7 @@ public:
 	Button(int x, int y, string id);
 
 	//Identificacio del boto, per exemple ficar que es el boto de start, el de sortir etc...
+	void getButtonIdAsChar() {}; //retornar en char per escriure en la font.
 	string getButtonId() { return m_ButtonId; };
 	void setButtonId(string id) { m_ButtonId = id; };
 	//Getters i settters de la posicio del boto en la pantalla...
@@ -28,7 +29,7 @@ public:
 	//
 	int getButtonIdNumber() { return m_id; };
 	void setButtonIdNumber(int id) { m_id = id; };
-	//Getter i setter del sprite del boto.
+	//Getter i setter del status del boto.
 	void setButtonStatus(bool status) { m_HasBeenClicked = status; };
 	bool getButtonStatus() { return m_HasBeenClicked; };
 private:

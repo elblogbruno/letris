@@ -20,6 +20,7 @@ bool Button::updateButton(int mousePosX, int mousePosY, bool mousePressed) {
 	}
 	return getButtonStatus();
 }
+
 int i = 0;
 Button::Button(int x, int y, string id) {
 	setButtonId(id);
