@@ -1,10 +1,67 @@
-﻿  joc.cpp
-d:\desktop\universidad\metodologia de la programacion\practica letris\practica\0. c++ code\logic game\joc.h(27): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
-d:\desktop\universidad\metodologia de la programacion\practica letris\practica\0. c++ code\logic game\joc.cpp(138): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-d:\desktop\universidad\metodologia de la programacion\practica letris\practica\0. c++ code\logic game\joc.cpp(139): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-d:\desktop\universidad\metodologia de la programacion\practica letris\practica\0. c++ code\logic game\joc.cpp(140): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-d:\desktop\universidad\metodologia de la programacion\practica letris\practica\0. c++ code\logic game\joc.cpp(161): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-d:\desktop\universidad\metodologia de la programacion\practica letris\practica\0. c++ code\logic game\joc.cpp(174): warning C4244: '+=': conversión de 'double' a 'float'; posible pérdida de datos
-d:\desktop\universidad\metodologia de la programacion\practica letris\practica\0. c++ code\logic game\joc.cpp(209): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-d:\desktop\universidad\metodologia de la programacion\practica letris\practica\0. c++ code\logic game\joc.cpp(237): warning C4244: '+=': conversión de 'double' a 'float'; posible pérdida de datos
-  LetrisGame.vcxproj -> D:\Desktop\Universidad\Metodologia de la Programacion\Practica Letris\Practica\2. Platforms\0. Windows Desktop\\Program\LetrisGame.exe
+﻿  debug.cpp
+  image_png.cpp
+  keyboard.cpp
+  mouse.cpp
+  NFont.cpp
+d:\desktop\universidad\metodologia de la programacion\letris\practica letris\practica\0. c++ code\graphic lib\nfont\nfont.cpp(382): warning C4244: 'inicializando': conversión de 'const int' a 'float'; posible pérdida de datos
+  sound.cpp
+  sprites.cpp
+  stb_vorbis.cpp
+  video.cpp
+  joc.cpp
+d:\desktop\universidad\metodologia de la programacion\letris\practica letris\practica\0. c++ code\logic game\joc.h(27): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
+d:\desktop\universidad\metodologia de la programacion\letris\practica letris\practica\0. c++ code\logic game\joc.cpp(154): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+d:\desktop\universidad\metodologia de la programacion\letris\practica letris\practica\0. c++ code\logic game\joc.cpp(155): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+d:\desktop\universidad\metodologia de la programacion\letris\practica letris\practica\0. c++ code\logic game\joc.cpp(156): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+d:\desktop\universidad\metodologia de la programacion\letris\practica letris\practica\0. c++ code\logic game\joc.cpp(176): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+d:\desktop\universidad\metodologia de la programacion\letris\practica letris\practica\0. c++ code\logic game\joc.cpp(189): warning C4244: '+=': conversión de 'double' a 'float'; posible pérdida de datos
+d:\desktop\universidad\metodologia de la programacion\letris\practica letris\practica\0. c++ code\logic game\joc.cpp(223): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+d:\desktop\universidad\metodologia de la programacion\letris\practica letris\practica\0. c++ code\logic game\joc.cpp(251): warning C4244: '+=': conversión de 'double' a 'float'; posible pérdida de datos
+  main.cpp
+d:\desktop\universidad\metodologia de la programacion\letris\practica letris\practica\0. c++ code\logic game\joc.h(27): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
+  Button.cpp
+  Generando código...
+  SDL_FontCache.c
+d:\desktop\universidad\metodologia de la programacion\letris\practica letris\practica\0. c++ code\graphic lib\nfont\sdl_fontcache.c(234): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
+d:\desktop\universidad\metodologia de la programacion\letris\practica letris\practica\0. c++ code\graphic lib\nfont\sdl_fontcache.c(614): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+d:\desktop\universidad\metodologia de la programacion\letris\practica letris\practica\0. c++ code\graphic lib\nfont\sdl_fontcache.c(615): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+d:\desktop\universidad\metodologia de la programacion\letris\practica letris\practica\0. c++ code\graphic lib\nfont\sdl_fontcache.c(616): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+d:\desktop\universidad\metodologia de la programacion\letris\practica letris\practica\0. c++ code\graphic lib\nfont\sdl_fontcache.c(617): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+d:\desktop\universidad\metodologia de la programacion\letris\practica letris\practica\0. c++ code\graphic lib\nfont\sdl_fontcache.c(619): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
+d:\desktop\universidad\metodologia de la programacion\letris\practica letris\practica\0. c++ code\graphic lib\nfont\sdl_fontcache.c(631): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+d:\desktop\universidad\metodologia de la programacion\letris\practica letris\practica\0. c++ code\graphic lib\nfont\sdl_fontcache.c(633): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+d:\desktop\universidad\metodologia de la programacion\letris\practica letris\practica\0. c++ code\graphic lib\nfont\sdl_fontcache.c(637): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+d:\desktop\universidad\metodologia de la programacion\letris\practica letris\practica\0. c++ code\graphic lib\nfont\sdl_fontcache.c(640): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+d:\desktop\universidad\metodologia de la programacion\letris\practica letris\practica\0. c++ code\graphic lib\nfont\sdl_fontcache.c(643): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+d:\desktop\universidad\metodologia de la programacion\letris\practica letris\practica\0. c++ code\graphic lib\nfont\sdl_fontcache.c(645): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+d:\desktop\universidad\metodologia de la programacion\letris\practica letris\practica\0. c++ code\graphic lib\nfont\sdl_fontcache.c(649): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+d:\desktop\universidad\metodologia de la programacion\letris\practica letris\practica\0. c++ code\graphic lib\nfont\sdl_fontcache.c(652): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+d:\desktop\universidad\metodologia de la programacion\letris\practica letris\practica\0. c++ code\graphic lib\nfont\sdl_fontcache.c(702): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+d:\desktop\universidad\metodologia de la programacion\letris\practica letris\practica\0. c++ code\graphic lib\nfont\sdl_fontcache.c(703): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+d:\desktop\universidad\metodologia de la programacion\letris\practica letris\practica\0. c++ code\graphic lib\nfont\sdl_fontcache.c(704): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+d:\desktop\universidad\metodologia de la programacion\letris\practica letris\practica\0. c++ code\graphic lib\nfont\sdl_fontcache.c(705): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+d:\desktop\universidad\metodologia de la programacion\letris\practica letris\practica\0. c++ code\graphic lib\nfont\sdl_fontcache.c(1558): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+d:\desktop\universidad\metodologia de la programacion\letris\practica letris\practica\0. c++ code\graphic lib\nfont\sdl_fontcache.c(1552): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
+d:\desktop\universidad\metodologia de la programacion\letris\practica letris\practica\0. c++ code\graphic lib\nfont\sdl_fontcache.c(1835): warning C4244: 'función': conversión de 'int' a 'float'; posible pérdida de datos
+d:\desktop\universidad\metodologia de la programacion\letris\practica letris\practica\0. c++ code\graphic lib\nfont\sdl_fontcache.c(1848): warning C4244: 'función': conversión de 'int' a 'float'; posible pérdida de datos
+d:\desktop\universidad\metodologia de la programacion\letris\practica letris\practica\0. c++ code\graphic lib\nfont\sdl_fontcache.c(1880): warning C4244: 'función': conversión de 'int' a 'float'; posible pérdida de datos
+d:\desktop\universidad\metodologia de la programacion\letris\practica letris\practica\0. c++ code\graphic lib\nfont\sdl_fontcache.c(1911): warning C4244: 'función': conversión de 'int' a 'float'; posible pérdida de datos
+d:\desktop\universidad\metodologia de la programacion\letris\practica letris\practica\0. c++ code\graphic lib\nfont\sdl_fontcache.c(1942): warning C4244: 'función': conversión de 'int' a 'float'; posible pérdida de datos
+d:\desktop\universidad\metodologia de la programacion\letris\practica letris\practica\0. c++ code\graphic lib\nfont\sdl_fontcache.c(1973): warning C4244: 'función': conversión de 'int' a 'float'; posible pérdida de datos
+d:\desktop\universidad\metodologia de la programacion\letris\practica letris\practica\0. c++ code\graphic lib\nfont\sdl_fontcache.c(2014): warning C4244: 'función': conversión de 'int' a 'float'; posible pérdida de datos
+d:\desktop\universidad\metodologia de la programacion\letris\practica letris\practica\0. c++ code\graphic lib\nfont\sdl_fontcache.c(2002): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
+d:\desktop\universidad\metodologia de la programacion\letris\practica letris\practica\0. c++ code\graphic lib\nfont\sdl_fontcache.c(2043): warning C4244: 'función': conversión de 'int' a 'float'; posible pérdida de datos
+d:\desktop\universidad\metodologia de la programacion\letris\practica letris\practica\0. c++ code\graphic lib\nfont\sdl_fontcache.c(2019): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
+d:\desktop\universidad\metodologia de la programacion\letris\practica letris\practica\0. c++ code\graphic lib\nfont\sdl_fontcache.c(2060): warning C4244: 'función': conversión de 'int' a 'float'; posible pérdida de datos
+d:\desktop\universidad\metodologia de la programacion\letris\practica letris\practica\0. c++ code\graphic lib\nfont\sdl_fontcache.c(2048): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
+d:\desktop\universidad\metodologia de la programacion\letris\practica letris\practica\0. c++ code\graphic lib\nfont\sdl_fontcache.c(2077): warning C4244: 'función': conversión de 'int' a 'float'; posible pérdida de datos
+d:\desktop\universidad\metodologia de la programacion\letris\practica letris\practica\0. c++ code\graphic lib\nfont\sdl_fontcache.c(2065): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
+d:\desktop\universidad\metodologia de la programacion\letris\practica letris\practica\0. c++ code\graphic lib\nfont\sdl_fontcache.c(2106): warning C4244: 'función': conversión de 'int' a 'float'; posible pérdida de datos
+d:\desktop\universidad\metodologia de la programacion\letris\practica letris\practica\0. c++ code\graphic lib\nfont\sdl_fontcache.c(2082): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
+d:\desktop\universidad\metodologia de la programacion\letris\practica letris\practica\0. c++ code\graphic lib\nfont\sdl_fontcache.c(2111): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
+d:\desktop\universidad\metodologia de la programacion\letris\practica letris\practica\0. c++ code\graphic lib\nfont\sdl_fontcache.c(2144): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
+d:\desktop\universidad\metodologia de la programacion\letris\practica letris\practica\0. c++ code\graphic lib\nfont\sdl_fontcache.c(2546): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+d:\desktop\universidad\metodologia de la programacion\letris\practica letris\practica\0. c++ code\graphic lib\nfont\sdl_fontcache.c(2547): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+d:\desktop\universidad\metodologia de la programacion\letris\practica letris\practica\0. c++ code\graphic lib\nfont\sdl_fontcache.c(2539): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
+d:\desktop\universidad\metodologia de la programacion\letris\practica letris\practica\0. c++ code\graphic lib\nfont\sdl_fontcache.c(2596): warning C4244: 'función': conversión de 'int' a 'float'; posible pérdida de datos
+  LetrisGame.vcxproj -> D:\Desktop\Universidad\Metodologia de la Programacion\letris\Practica Letris\Practica\2. Platforms\0. Windows Desktop\\Program\LetrisGame.exe
