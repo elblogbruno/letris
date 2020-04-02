@@ -1,0 +1,10 @@
+﻿  joc.cpp
+d:\desktop\universidad\metodologia de la programacion\practica letris\practica\0. c++ code\logic game\joc.h(27): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
+d:\desktop\universidad\metodologia de la programacion\practica letris\practica\0. c++ code\logic game\joc.cpp(138): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+d:\desktop\universidad\metodologia de la programacion\practica letris\practica\0. c++ code\logic game\joc.cpp(139): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+d:\desktop\universidad\metodologia de la programacion\practica letris\practica\0. c++ code\logic game\joc.cpp(140): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+d:\desktop\universidad\metodologia de la programacion\practica letris\practica\0. c++ code\logic game\joc.cpp(161): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+d:\desktop\universidad\metodologia de la programacion\practica letris\practica\0. c++ code\logic game\joc.cpp(174): warning C4244: '+=': conversión de 'double' a 'float'; posible pérdida de datos
+d:\desktop\universidad\metodologia de la programacion\practica letris\practica\0. c++ code\logic game\joc.cpp(209): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+d:\desktop\universidad\metodologia de la programacion\practica letris\practica\0. c++ code\logic game\joc.cpp(237): warning C4244: '+=': conversión de 'double' a 'float'; posible pérdida de datos
+  LetrisGame.vcxproj -> D:\Desktop\Universidad\Metodologia de la Programacion\Practica Letris\Practica\2. Platforms\0. Windows Desktop\\Program\LetrisGame.exe
