@@ -41,6 +41,7 @@ const int ANGLES = 2;
 const int MOSTRA_MATRIU = 0;
 const int AMAGAR_MATRIU = 1;
 
+
 void joc();
 
 /*----- END --------------*/

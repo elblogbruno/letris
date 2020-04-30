@@ -90,42 +90,44 @@ struct T_ANIMATION
 //Un sprite es un objeto de "alto nivel" que nos ayuda a trabajar con frames y animaciones
 class Sprite {
 public:
-  Sprite(const char* ruta);
-  Sprite();
-  ~Sprite();
-  void create(const char* ruta);
-  void setScale(float scale);
-  void draw(int x, int y) ;
+    Sprite(const char* ruta);
+    Sprite();
+    ~Sprite();
+    Sprite& operator=(const Sprite& rv); 
 
-  int getScaleY() const;
-  int getScaleX() const;
+    void create(const char* ruta);
+    void setScale(float scale);
+    void draw(int x, int y) ;
+
+    int getScaleY() const;
+    int getScaleX() const;
 private:
-  //Crea una nueva animación con los .png ordenados de un directorio
-  struct T_ANIMATION *CreateAnimation(T_DESCRIPCION_ANIMACION *descripcion_anim);
-  //Crea un frame y devuelve el puntero
-  struct Frame *CreateFrame(const char *ruta);
+    //Crea una nueva animación con los .png ordenados de un directorio
+    struct T_ANIMATION *CreateAnimation(T_DESCRIPCION_ANIMACION *descripcion_anim);
+    //Crea un frame y devuelve el puntero
+    struct Frame *CreateFrame(const char *ruta);
 
-  //Realiza el proceso necesario en el sprite (por ejemplo la animación)
-  void Tick();
+    //Realiza el proceso necesario en el sprite (por ejemplo la animación)
+    void Tick();
 
-  void SetAnimation(T_ANIMATION *anim, bool bOverWrite);
-  void ReleaseAnimation(T_ANIMATION *anim);
-  void ReleaseFrame(Frame *frame) const;
-  void SetAnimationSpeed(float speed);
-  void SetFrame(int num_frame);
-  void SetScaleY(float scaley);
-  void SetScaleX(float scalex);
+    void SetAnimation(T_ANIMATION *anim, bool bOverWrite);
+    void ReleaseAnimation(T_ANIMATION *anim);
+    void ReleaseFrame(Frame *frame) const;
+    void SetAnimationSpeed(float speed);
+    void SetFrame(int num_frame);
+    void SetScaleY(float scaley);
+    void SetScaleX(float scalex);
 
-  //Posición por la que vamos del frame actual de la animación
-  float posicion_animacion ;
-  float velocidad_animacion;
-  int num_frame_actual;
-  //Multiplicador de tamaño
-  float scaley;
-  float scalex;
-  //Indica si la animación ha llegado a terminarse o no
-  bool animacion_completada ;
-  struct Frame *frame_actual ;
-  //Puntero a la animación actual
-  struct T_ANIMATION *animacion;
+    //Posición por la que vamos del frame actual de la animación
+    float posicion_animacion ;
+    float velocidad_animacion;
+    int num_frame_actual;
+    //Multiplicador de tamaño
+    float scaley;
+    float scalex;
+    //Indica si la animación ha llegado a terminarse o no
+    bool animacion_completada ;
+    struct Frame *frame_actual ;
+    //Puntero a la animación actual
+    struct T_ANIMATION *animacion;
 };

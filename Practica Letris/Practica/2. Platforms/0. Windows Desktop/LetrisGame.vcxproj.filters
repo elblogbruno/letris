@@ -40,6 +40,21 @@
     <ClCompile Include="..\..\0. C++ Code\Logic Game\Button.cpp">
       <Filter>Logic Game</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\0. C++ Code\Logic Game\MainMenu.cpp">
+      <Filter>Logic Game\GameStates</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\0. C++ Code\Logic Game\PlayingState.cpp">
+      <Filter>Logic Game\GameStates</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\0. C++ Code\Logic Game\GameOverState.cpp">
+      <Filter>Logic Game\GameStates</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\0. C++ Code\Logic Game\TileRenderer.cpp">
+      <Filter>Logic Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\0. C++ Code\Logic Game\LetrisGame.cpp">
+      <Filter>Logic Game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\0. C++ Code\Logic Game\joc.h">
@@ -90,6 +105,21 @@
     <ClInclude Include="..\..\0. C++ Code\Logic Game\Button.h">
       <Filter>Logic Game</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\0. C++ Code\Logic Game\MainMenu.h">
+      <Filter>Logic Game\GameStates</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\0. C++ Code\Logic Game\PlayingState.h">
+      <Filter>Logic Game\GameStates</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\0. C++ Code\Logic Game\GameOverState.h">
+      <Filter>Logic Game\GameStates</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\0. C++ Code\Logic Game\TileRenderer.h">
+      <Filter>Logic Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\0. C++ Code\Logic Game\LetrisGame.h">
+      <Filter>Logic Game</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Logic Game">
@@ -100,6 +130,9 @@
     </Filter>
     <Filter Include="Graphic Library\NFont">
       <UniqueIdentifier>{9d14b6b8-0574-4243-9513-f9cd42bc5769}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logic Game\GameStates">
+      <UniqueIdentifier>{03e50bec-6368-4427-a21c-553497dc8db6}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

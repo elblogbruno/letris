@@ -6,7 +6,10 @@
 #include "sprites.h"
 #include "error.h"
 
-Sprite::Sprite(){}
+Sprite::Sprite(){
+    frame_actual = NULL;
+    animacion = NULL;
+}
 
 Sprite::Sprite(const char *ruta)
 {
@@ -24,20 +27,48 @@ Sprite::Sprite(const char *ruta)
   } // Si recibimos un NULL, queremos un sprite "vacio" para ponerle luego animaciones
 }
 
+Sprite& Sprite::operator=(const Sprite& rv) {
+    velocidad_animacion = 1.0f;
+    scaley = rv.scaley;
+    scalex = rv.scalex;
+    animacion = NULL;
+    if (rv.frame_actual != NULL){
+        frame_actual = new Frame();
+          frame_actual->tamx = rv.frame_actual->tamx;
+          frame_actual->tamy = rv.frame_actual->tamy;
+          
+        frame_actual->surface = SDL_ConvertSurface(rv.frame_actual->surface, rv.frame_actual->surface->format, SDL_SWSURFACE);
+        
+          // Creamos el handle de textura de hardware
+          frame_actual->texture = SDL_CreateTextureFromSurface(g_Video.renderer, frame_actual->surface) ;
+
+          // Indicamos al hardware de que este sprite va a necesitar c?culos de alpha blending (para que no se vea el rect?gulo donde no hay dibujo)
+          SDL_SetTextureBlendMode(frame_actual->texture, SDL_BLENDMODE_BLEND);
+        
+    }else{
+        frame_actual = NULL;
+    }
+      
+    return *this;
+}
+
 Sprite::~Sprite()
 {
   if(animacion == NULL)
   {
-    // Si el sprite no tiene animación es que solo tiene su frame actual
-    // Si el frame tiene un handle de textura pedimos al hardware que se olvide de la imagen y
-    // libere la memoria y los handles que haya podido alojar
-    if(frame_actual->texture) SDL_DestroyTexture(frame_actual->texture);
+      if (frame_actual != NULL){
+          // Si el sprite no tiene animación es que solo tiene su frame actual
+          // Si el frame tiene un handle de textura pedimos al hardware que se olvide de la imagen y
+          // libere la memoria y los handles que haya podido alojar
+          if(frame_actual->texture) SDL_DestroyTexture(frame_actual->texture);
 
-    // Si el frame tiene una surface de SDL la liberamos
-    if(frame_actual->surface) SDL_FreeSurface(frame_actual->surface);
+          // Si el frame tiene una surface de SDL la liberamos
+          if(frame_actual->surface) SDL_FreeSurface(frame_actual->surface);
 
-    //Limpiamos el resto
-    delete frame_actual;
+          //Limpiamos el resto
+          delete frame_actual;
+      }
+    
   } // Si el sprite tiene animación no hacemos nada, las animaciones se tienen que liberar a mano
   IMG_Quit();
 }
