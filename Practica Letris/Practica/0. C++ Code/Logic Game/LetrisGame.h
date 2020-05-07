@@ -12,6 +12,6 @@ class LetrisGame
 		MainMenu mainMenuState;
 		PlayingState playingState;
 		bool esGameOver;
-		int  m_estatActual = 0;
+		int m_estatActual;
 };
 

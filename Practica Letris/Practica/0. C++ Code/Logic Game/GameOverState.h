@@ -1,6 +1,5 @@
 #pragma once
 #include "../Graphic Lib/NFont/NFont.h"
-#include "Button.h"
 #include "joc.h"
 
 class GameOverState

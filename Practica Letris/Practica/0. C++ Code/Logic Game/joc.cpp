@@ -2,6 +2,7 @@
 #include "../Graphic Lib/NFont/NFont.h"
 #include <iostream>
 #include "LetrisGame.h"
+#include "GameState.h"
 using namespace std;
 
 

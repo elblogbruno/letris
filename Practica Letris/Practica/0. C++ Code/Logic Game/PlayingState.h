@@ -1,7 +1,6 @@
 #pragma once
 #include "../Graphic Lib/NFont/NFont.h"
 #include "Button.h"
-#include "joc.h"
 #include "TileRenderer.h"
 class PlayingState
 {

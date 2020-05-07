@@ -9,14 +9,37 @@ bool Button::updateButtonRadioButton(int mousePosX, int mousePosY, bool mousePre
 		mousePosY > getButtonY() && mousePosY < getButtonY() + getHeight() &&
 		mousePressed) {
 		
-		if (isOn()) {
-			m_currentState = NORMAL;
-			m_IsButtonOn = false;
-		}
-		else {
-			m_currentState = PRESSED;
-			m_IsButtonOn = true;
-		}
+		
+			if (isOn()) {
+				setNotActive();
+				m_IsButtonOn = false;
+			}
+			else {
+				setActive();
+				m_IsButtonOn = true;
+			}
+		
+
+	}
+	return m_IsButtonOn;
+}
+bool Button::updateButtonRadioButtonArray(int mousePosX, int mousePosY, bool mousePressed,int &id) {
+	if (mousePosX > getButtonX() && mousePosX < getButtonX() + getWidth() &&
+		mousePosY > getButtonY() && mousePosY < getButtonY() + getHeight() &&
+		mousePressed) {
+
+		
+			if (isOn()) {
+				setNotActive();
+				m_IsButtonOn = false;
+			}
+			else {
+				setActive();
+				m_IsButtonOn = true;
+				id = getButtonIdNumber();
+			}
+		
+		
 	}
 	return m_IsButtonOn;
 }
@@ -27,18 +50,18 @@ bool Button::updateButton(int mousePosX, int mousePosY, bool mousePressed) {
 		mousePosY >= getButtonY() && mousePosY <= getButtonY() + getHeight())
 	{
 		if (mousePressed) {
-			m_currentState = PRESSED;
+			setActive();
 		}
 		else {
 			if (m_currentState == PRESSED) {
 				m_shouldUpdate = true;
 			}
-			m_currentState = NORMAL;
+			setNotActive();
 		}
 	}
 	else 
 	{
-		m_currentState = NORMAL;
+		setNotActive();
 	}
 	return m_shouldUpdate;
 }
@@ -47,16 +70,31 @@ bool Button::updateButton(int mousePosX, int mousePosY, bool mousePressed) {
 Button::Button() : currentFont("data/Fonts/FreeSans.ttf", 30, NFont::Color(255, 255, 255, 255))
 {
 }
+Button::Button(int x, int y, int width, int height, string tag, const string& pathOn, const string& pathOff,int id) {
+	
+	m_IsButtonOn = false;
+	setButtonTag(tag);
+	setButtonIdNumber(id);
+	setButtonX(x);
+	setButtonY(y);
+	setNotActive();
+	m_SpriteOff.create(pathOff.c_str());
+	m_SpriteOn.create(pathOn.c_str());
 
+	setWidth(width);
+	setHeight(height);
+
+	m_containsTitle = true;
+}
 Button::Button(int x, int y, int width, int height, string tag, string title, const string& pathOn, const string& pathOff) {
-	m_currentState = NORMAL;
+	
 	m_IsButtonOn = false;
 	setButtonTag(tag);
 	setButtonTitle(title);
 
 	setButtonX(x);
 	setButtonY(y);
-
+	setNotActive();
 	m_SpriteOff.create(pathOff.c_str());
 	m_SpriteOn.create(pathOn.c_str());
 
@@ -66,11 +104,12 @@ Button::Button(int x, int y, int width, int height, string tag, string title, co
 	m_containsTitle = true;
 }
 Button::Button(int x, int y,int width,int height,string tag,  const string& pathOn, const string& pathOff) {
-	m_currentState = NORMAL;
+	
 	setButtonTag(tag);
 	m_IsButtonOn = false;
 	setButtonX(x);
 	setButtonY(y);
+	setNotActive();
 	m_SpriteOff.create(pathOff.c_str());
 	m_SpriteOn.create(pathOn.c_str());
 

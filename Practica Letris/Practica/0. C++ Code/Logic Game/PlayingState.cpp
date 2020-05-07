@@ -1,6 +1,5 @@
 #include "PlayingState.h"
 
-
 PlayingState::PlayingState() : fontBlanca("data/Fonts/FreeSans.ttf", 30, NFont::Color(255, 255, 255, 255)),fontNegra("data/Fonts/FreeSans.ttf", 30, NFont::Color(0, 0, 0, 255)),
 fonsPlaying("./data/GUI/background_play.png"), timeBar("./data/GUI/Time_Bar.png")
 {
@@ -17,6 +16,7 @@ fonsPlaying("./data/GUI/background_play.png"), timeBar("./data/GUI/Time_Bar.png"
 	 drawTimer = true;
 	 timerPartida = 0.0f;
 	 matriuLletres = TileRenderer();
+
 }
 
 
