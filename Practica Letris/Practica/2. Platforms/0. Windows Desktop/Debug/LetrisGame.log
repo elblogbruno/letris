@@ -1,7 +1,4 @@
-﻿  MainMenu.cpp
-d:\desktop\universidad\metodologia de la programacion\letris\practica letris\practica\0. c++ code\logic game\joc.h(27): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
-d:\desktop\universidad\metodologia de la programacion\letris\practica letris\practica\0. c++ code\logic game\mainmenu.cpp(32): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-d:\desktop\universidad\metodologia de la programacion\letris\practica letris\practica\0. c++ code\logic game\mainmenu.cpp(33): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-d:\desktop\universidad\metodologia de la programacion\letris\practica letris\practica\0. c++ code\logic game\mainmenu.cpp(34): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-d:\desktop\universidad\metodologia de la programacion\letris\practica letris\practica\0. c++ code\logic game\mainmenu.cpp(53): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+﻿  TileRenderer.cpp
+D:\Desktop\Universidad\Metodologia de la Programacion\letris\Practica Letris\Practica\0. C++ Code\Logic Game\joc.h(27,38): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Desktop\Universidad\Metodologia de la Programacion\letris\Practica Letris\Practica\0. C++ Code\Logic Game\TileRenderer.cpp(93,32): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
   LetrisGame.vcxproj -> D:\Desktop\Universidad\Metodologia de la Programacion\letris\Practica Letris\Practica\2. Platforms\0. Windows Desktop\\Program\LetrisGame.exe

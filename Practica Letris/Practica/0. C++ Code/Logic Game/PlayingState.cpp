@@ -16,7 +16,6 @@ fonsPlaying("./data/GUI/background_play.png"), timeBar("./data/GUI/Time_Bar.png"
 	 drawTimer = true;
 	 timerPartida = 0.0f;
 	 matriuLletres = TileRenderer();
-
 }
 
 
@@ -29,36 +28,34 @@ bool PlayingState::drawPlayingState(int mousePosX, int mousePosY, bool moousePre
 
 	botoPausaPlayContador.drawButton();
 	pausarContador = botoPausaPlayContador.updateButtonRadioButton(mousePosX, mousePosY, moousePressed);
+	botoCheck.drawButton();
+	fontBlanca.draw(botoCheck.getButtonX() + 10, botoCheck.getButtonY(), NFont::Scale(1.5f), "CHECK");
+	botoEliminar.drawButton();
 	if (!pausarContador) {
 		timerPartida += deltaTime; // Va sumant els segons
+		check = botoCheck.updateButton(mousePosX, mousePosY, moousePressed);
+		eliminarMatriu = botoEliminar.updateButton(mousePosX, mousePosY, moousePressed);
+
+		if (eliminarMatriu) {
+			drawMatrix = false;
+		}
+		if (check) {
+			drawMatrix = true;
+		}
 	}
 	if (drawTimer) {
 		fontNegra.draw(200, 50, NFont::Scale(0.85f), "%d", (int)timerPartida);
 	}
-	if (timerPartida > 10) {
+	if (timerPartida > 200) {
 		timerPartida = 0;
-		drawTimer = true;
+		//drawTimer = false;
 		esGameOver = true;
 		m_estatActual = GAME_OVER; //Han passat 10 segons, llavors canvia a la pantalla de GameOver
 	}
 	
-	botoCheck.drawButton();
-	fontBlanca.draw(botoCheck.getButtonX() + 10, botoCheck.getButtonY(), NFont::Scale(1.5f), "CHECK");
-	check = botoCheck.updateButton(mousePosX, mousePosY, moousePressed);
-
-
-	botoEliminar.drawButton();
-	eliminarMatriu = botoEliminar.updateButton(mousePosX, mousePosY, moousePressed);
-
-	if (eliminarMatriu) {
-		drawMatrix = false;
-	}
-	if (check) {
-		drawMatrix = true;
-	}
 
 	if (drawMatrix) {
-		matriuLletres.Render(10, 8);
+		matriuLletres.Render(mousePosX,mousePosY,moousePressed, deltaTime, pausarContador);
 	}
 	
 	

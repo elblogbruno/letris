@@ -55,6 +55,9 @@
     <ClCompile Include="..\..\0. C++ Code\Logic Game\LetrisGame.cpp">
       <Filter>Logic Game</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\0. C++ Code\Logic Game\Tile.cpp">
+      <Filter>Logic Game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\0. C++ Code\Logic Game\joc.h">
@@ -118,6 +121,9 @@
       <Filter>Logic Game</Filter>
     </ClInclude>
     <ClInclude Include="..\..\0. C++ Code\Logic Game\LetrisGame.h">
+      <Filter>Logic Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\0. C++ Code\Logic Game\Tile.h">
       <Filter>Logic Game</Filter>
     </ClInclude>
   </ItemGroup>

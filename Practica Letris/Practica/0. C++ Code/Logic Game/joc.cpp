@@ -3,6 +3,7 @@
 #include <iostream>
 #include "LetrisGame.h"
 #include "GameState.h"
+#include <time.h>
 using namespace std;
 
 
@@ -12,6 +13,7 @@ using namespace std;
 //-----------------------------------------
 void joc()
 {
+	srand((int)(time(NULL)));
 	//Inicialitza un objecte de la classe Screen que s'utilitza per gestionar la finestra grafica
 	Screen pantalla(MIDA_X, MIDA_Y);
 	//Mostrem la finestra grafica
