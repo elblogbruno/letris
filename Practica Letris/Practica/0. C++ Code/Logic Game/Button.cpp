@@ -9,7 +9,6 @@ bool Button::updateButtonRadioButton(int mousePosX, int mousePosY, bool mousePre
 		mousePosY > getButtonY() && mousePosY < getButtonY() + getHeight() &&
 		mousePressed) {
 		
-		
 			if (isOn()) {
 				setNotActive();
 				m_IsButtonOn = false;
@@ -19,10 +18,11 @@ bool Button::updateButtonRadioButton(int mousePosX, int mousePosY, bool mousePre
 				m_IsButtonOn = true;
 			}
 		
-
 	}
 	return m_IsButtonOn;
 }
+
+
 bool Button::updateButtonRadioButtonArray(int mousePosX, int mousePosY, bool mousePressed,int &id) {
 	if (mousePosX > getButtonX() && mousePosX < getButtonX() + getWidth() &&
 		mousePosY > getButtonY() && mousePosY < getButtonY() + getHeight() &&
@@ -66,28 +66,31 @@ bool Button::updateButton(int mousePosX, int mousePosY, bool mousePressed) {
 	return m_shouldUpdate;
 }
 
-
 Button::Button() : currentFont("data/Fonts/FreeSans.ttf", 30, NFont::Color(255, 255, 255, 255))
 {
 }
 Button::Button(int x, int y, int width, int height, string tag, const string& pathOn, const string& pathOff,int id) {
-	
-	m_IsButtonOn = false;
-	setButtonTag(tag);
-	setButtonIdNumber(id);
-	setButtonX(x);
-	setButtonY(y);
-	setNotActive();
-	m_SpriteOff.create(pathOff.c_str());
-	m_SpriteOn.create(pathOn.c_str());
+	//Constructor per button en un array amb un titol o tag.
 
-	setWidth(width);
-	setHeight(height);
+	m_IsButtonOn = false; //inicialitzem el button al seu estat normal
+	setNotActive(); //inicialitzem el button al seu estat normal
+
+	setButtonTag(tag); //inicialitzem el seu tag , que en el cas del tile sera la lletra que conte aquest button
+	setButtonIdNumber(id); //li donem la seva identificacio numeral, molt util per quan tenim un array de RadioButtons distingibles (menu de seleccionar idioma)
+	setButtonX(x); //inicialitzem la seva posicio en el eix x
+	setButtonY(y); //inicialitzem la seva posicio en el eix y
+
+	m_SpriteOff.create(pathOff.c_str()); //creem el sprite per l'estat off del button
+	m_SpriteOn.create(pathOn.c_str()); //creem el sprite per l'estat on del button
+
+	setWidth(width); //inicialitzem la seva width del button
+	setHeight(height); //inicialitzem la seva height(altura) del button
 
 	m_containsTitle = true;
 }
 Button::Button(int x, int y, int width, int height, string tag, string title, const string& pathOn, const string& pathOff) {
-	
+	//Constructor per button amb un titol o tag.
+
 	m_IsButtonOn = false;
 	setButtonTag(tag);
 	setButtonTitle(title);
@@ -105,6 +108,8 @@ Button::Button(int x, int y, int width, int height, string tag, string title, co
 }
 Button::Button(int x, int y,int width,int height,string tag,  const string& pathOn, const string& pathOff) {
 	
+	//Constructor per button normal amb un  tag.
+
 	setButtonTag(tag);
 	m_IsButtonOn = false;
 	setButtonX(x);

@@ -1,23 +1,7 @@
 #include "TileRenderer.h"
 #include <iostream>
 
-int TileRenderer::calculateNewLetter() {
-	int randomIndex = 0;
-	int randNumber = rand() % 100;
-	if (randNumber < vowel_score) {
-		randomIndex = rand() % MAX_ALPHABET_ENGLISH_VOWELS;
-		std::cout << "USING VOWELS" << endl;
-	}
-	else {
-		randomIndex = rand() % MAX_ALPHABET_ENGLISH_CONSONANTS;
-		std::cout << "USING CONSONANTS" << endl;
-	}
-	return randomIndex;
-}
-int TileRenderer::calculateNewVelocity() {
-	int result = (rand() % (1000 - 500)) + 500;
-	return result;
-}
+
 TileRenderer::TileRenderer() {
 	
 	for (int  i = 0; i < MAX_ALPHABET_ENGLISH; i++)
@@ -25,88 +9,278 @@ TileRenderer::TileRenderer() {
 		string nomFitxer = "./data/Letters/white_" + to_string(i) + ".png";
 		string nomFitxerYellow = "./data/Letters/yellow_" + to_string(i) + ".png";
 		Tile tile = Tile(nomFitxer, nomFitxerYellow, abecedari[i]);
-		int posX = 0 + (TILE_WIDTH + 1) + BOARD_INIT_X;
-		int posY = 0 + (TILE_HEIGHT + 1) + BOARD_INIT_Y;
+		int posX = 0 * (TILE_WIDTH - 0.5) + BOARD_INIT_X;
+		int posY = 0 * (TILE_HEIGHT + 0.5) + BOARD_INIT_Y;
 		tile.setPosX(posX);
 		tile.setPosY(posY);
 		m_aLetters_Normal[i] = tile;
 	}
 
-	std::cout << "Initializing first letter " << endl;
-
+	//std::cout << "Initializing first letter " << endl;
+	//lettersToFall.resize(8);
+	m_rows.resize(8);
+	wordIndex = 0;
+	novaPosicioY = 1;
 	randIndex = calculateNewLetter();
 	velocity = calculateNewVelocity();
-	column = rand() % 8 +1;
-	row = 0;
-	targetRow = 11;
 
-	std::cout << "Letter: " << m_aLetters_Normal[randIndex].getLetter() << " IS THE FIRST LETTER ON THE BOARD WITH RANDINDEX: " << randIndex << endl;
+	//std::cout << "Letter: " << m_aLetters_Normal[randIndex].getLetter() << " IS THE FIRST LETTER ON THE BOARD WITH RANDINDEX: " << randIndex << endl;
 
-	posX = column * (TILE_WIDTH + 1) + BOARD_INIT_X;
-	posY = row * (TILE_HEIGHT + 1) + BOARD_INIT_Y;
-	novaPosicioY = posY;
-	m_aLetters_Random.resize(80);
-	m_aLetters_Normal[randIndex].setLetterTargetRow(10);
-	//m_aLetters_Normal[randIndex].setPosX(0);
-	//m_aLetters_Normal[randIndex].setPosY(0);
+	column = 0;
+	columnAvailableIndex = 0;
+	targetRow = 10;
+	m_aLetters_Normal[randIndex].setLetterCoord(column, targetRow);
+
+	posX = column * (TILE_WIDTH - 0.5) + BOARD_INIT_X;
+	posY = targetRow * (TILE_HEIGHT + 0.5) + BOARD_INIT_Y;
+
 	numOfLetters = 0;
+	//lastIndex = randIndex;
 }
 
 void TileRenderer::Render( int mousePosX, int mousePosY, bool clicked, double& deltatime, bool stop) {
+	if (numOfLetters != 80) {
+
+		if (m_aLetters_Normal[randIndex].hasReachedEnd()) {
+			//std::cout << "Letter: " << m_aLetters_Normal[randIndex].getLetter() << " HAS ARRIVED TO THE END WITH RANDINDEX: " << randIndex << " AND COLUMN " << column << endl;
+
+			bool isFull = false;
+			//lastIndex = randIndex;
+
+			bool hasInserted = insertTile(column, isFull);
+			
+			if (hasInserted) {
+				//std::cout << "HAS BEEN INSERTED ? : " << hasInserted  << endl;
+
+				novaPosicioY = 1; //reseteja la posicio Y del tile.
+				randIndex = calculateNewLetter(); //calcula una nova lletra al atzar
+				velocity = calculateNewVelocity(); //calcula una nova velocitat al atzar de moment
+				column = calculateNewColumn(); //Calcular una nova columna al atzar de la qual caura la nova lletra
 
 
-	if (m_aLetters_Normal[randIndex].hasReachedEnd()) {
-		std::cout << "Letter: " << m_aLetters_Normal[randIndex].getLetter() << " HAS ARRIVED TO THE END WITH RANDINDEX: " << randIndex << endl;
-		m_aLetters_Random.push_back(m_aLetters_Normal[randIndex]);
+				targetRow = calculateTargetRow(column, randIndex, isFull);
+				m_aLetters_Normal[randIndex].setLetterCoord(column, targetRow); //Diem la columna i fila a la que la lletra anira a parar.
 
-		novaPosicioY = 0;
-		randIndex = calculateNewLetter();
-		velocity = calculateNewVelocity();
-		column = rand() % 8;
-		
-		/*for (int i = 0; i < m_aLetters_Random.size(); i++)
-		{
-			if (m_aLetters_Random[i].getLetterColumn() == m_aLetters_Normal[randIndex].getLetterColumn() && m_aLetters_Random[i].getLetterColumn() == m_aLetters_Normal[randIndex].getLetterColumn()) {
-				std::cout << "THERE'S  A LETTER IN TEHE SAME ROW" << endl;
-				//column--;
-				targetRow--;
-				row = targetRow;
-				
+				numOfLetters++;
+				std::cout << "NUM OF LETTERS SPAWNED: " << numOfLetters << endl;
 			}
 			else {
-				
-				targetRow = 11;
-				row = targetRow;
+				std::cout << "ERROR INSERTANT TILE " << endl;
 			}
-		}*/
-		std::cout << "Letter: " << m_aLetters_Normal[randIndex].getLetter() << " IS A NEW LETTER ON THE BOARD WITH RANDINDEX: " << randIndex << endl;
-		m_aLetters_Normal[randIndex].setLetterTargetRow(targetRow);
-		//m_aLetters_Normal[randIndex].setPosX(0);
-		//m_aLetters_Normal[randIndex].setPosY(0);
-		std::cout << "Letter: " << m_aLetters_Normal[randIndex].getLetterTargetRow() << endl;
-		std::cout << "Letter: " << m_aLetters_Random.size() << endl;
-		m_aLetters_Normal[randIndex].setLetterCoord(column, row);
-		numOfLetters++;
+
+		}
+		else {
+			if (!stop) {
+				novaPosicioY = novaPosicioY + deltatime * velocity;
+				m_aLetters_Normal[randIndex].setPosY(novaPosicioY-1);
+			}
+			m_aLetters_Normal[randIndex].drawLetter();
+		}
+
 	}
 	else {
-		if (!stop) {
-			novaPosicioY = novaPosicioY + deltatime * velocity;
-			m_aLetters_Normal[randIndex].setPosY(novaPosicioY);
-		}
-		m_aLetters_Normal[randIndex].drawLetter();
-	}
-	//m_aLetters_Random[numOfLetters].drawLetter();
-	if (m_aLetters_Random.size() > 0) {
-		for (int i = 0; i < 1; i++)
-		{
-			//std::cout << "NUM OF LETTERS : " << numOfLetters << endl;
-			std::cout << "Letter ON VECTOR : " << i + 1 << " " << m_aLetters_Random[i].getLetter() << endl;
-			m_aLetters_Random[i].drawLetter();
-			bool updating = m_aLetters_Random[i].updateLetterStatus(mousePosX, mousePosY, clicked);
-			if (updating) {
-				std::cout << m_aLetters_Random[i].getLetter();
-			}
-		}
+		std::cout << "MATRIX IS FULL " << endl;
 	}
 	
+	if (numOfLetters > 0) {
+		for (int i = 0; i < 8; i++) {
+			for (int j = 0; j < m_rows[i].size(); j++) {
+				m_rows[i][j].drawLetter();
+				bool updating = m_rows[i][j].updateLetterStatus(mousePosX, mousePosY, clicked);
+				if (updating && !m_rows[i][j].hasBeenSelected()) {
+					possibleLetter.push_back(m_rows[i][j]);
+					m_rows[i][j].setSelected(true);
+					m_rows[i][j].setActive(true);
+				}
+				else if(!updating && m_rows[i][j].hasBeenSelected()){
+					cout << "J IS " << j << endl;
+					possibleLetter.erase(possibleLetter.begin() + (possibleLetter.size()-1));
+					m_rows[i][j].setSelected(false);
+					m_rows[i][j].setActive(false);
+				}			
+			}
+		}
+		for (int j = 0; j < possibleLetter.size(); j++) {
+			possibleLetter[j].drawAuxiliar(j);
+		}
+	}
+
+}
+
+void TileRenderer::updateMatrixLetters(bool isCorrect, double& deltatime) {
+	if (isCorrect) {
+		for (int i = 0; i < possibleLetter.size(); i++)
+		{
+			int column = possibleLetter[i].getLetterColumn();
+			for (int j = 0; j < m_rows[column].size(); j++)
+			{
+				if (m_rows[column][j].getLetter() == possibleLetter[i].getLetter() && m_rows[column][j].getLetterRow() == possibleLetter[i].getLetterRow()) {
+
+					m_rows[column][j].setSelected(false);
+					m_rows[column][j].setActive(false);
+
+					if (j+1 < m_rows[column].size()) { //VOL DIR QUE HI HA UNA LLETRA PER SOBRE DEL INDEX DE LA LLETRA QUE ACABEM DE ELIMINAR
+						int limit = 10 - j + 1;
+						cout << "There are letters on top of remove one " << m_rows[column][j+1].getLetter() << endl;
+						for (int c = j; c < limit; c++)
+						{
+							m_rows[column][c].setLetterRow(m_rows[column][c].getLetterRow() + 1);
+							lettersToFallIndex.push_back(m_rows[column][c]);
+						}
+						numOfLetters--;
+					}
+
+					m_rows[column].erase(m_rows[column].begin() + j);
+
+					
+
+				}
+
+			}	
+		}
+		for (int i = 0; i < lettersToFallIndex.size(); i++)
+		{
+			int column = lettersToFallIndex[i].getLetterColumn();
+			if (m_rows[column][i].hasReachedEnd() == false)
+			{
+				novaPosicioY = novaPosicioY + deltatime * velocity;
+				m_rows[column][i].setPosY(novaPosicioY - 1);
+			}
+		}
+		possibleLetter.clear();
+	}
+	else {
+		for (int i = 0; i < possibleLetter.size(); i++)
+		{
+			int column = possibleLetter[i].getLetterColumn();
+			for (int j = 0; j < m_rows[column].size(); j++)
+			{
+				if (m_rows[column][j].getLetter() == possibleLetter[i].getLetter() && m_rows[column][j].getLetterRow() == possibleLetter[i].getLetterRow()) {
+					m_rows[column][j].setSelected(false);
+					m_rows[column][j].setActive(false);
+					possibleLetter[i].setSelected(false);
+					possibleLetter[i].setActive(false);
+					//possibleLetter.erase(possibleLetter.begin() + i);
+				}
+			}
+		}
+
+		possibleLetter.clear();
+	}
+
+}
+string TileRenderer::getPossibleWord() {
+	string parcialWord;
+	for (int i = 0; i < possibleLetter.size(); i++) {
+		parcialWord += possibleLetter[i].getLetter(); //obtenim cada lletra del array de tiles possibles de ser una paraula correcta
+	}
+	return parcialWord;
+}
+bool TileRenderer::insertTile(int & column, bool& isFull){
+	int columnSize = m_rows[column].size();
+	bool inserted = false;
+	//std::cout << "Column Size inserting: " << columnSize << " element column: " << column << endl;
+	if (columnSize >= 0 && columnSize != 10 ) {
+		m_rows[column].push_back(m_aLetters_Normal[randIndex]); //TODO: Fix this
+		
+		//std::cout << "Column Size after inserting: " << m_rows[column].size() << " element column: " << column << endl;
+		inserted = true;
+		isFull = false;
+	}
+	else {
+		isFull = true;
+	}
+	return inserted;
+}
+int TileRenderer::calculateTargetRow(int& column, int& randIndex, bool isFull) {
+	//std::cout << "Column : " << column << " RandIndex: " << randIndex << " Currrent target row: " << targetRow << "IS FULL ? : "<< isFull << endl;
+	int columnSize = m_rows[column].size();
+	if (columnSize == 10) {
+		column = calculateNewColumn();
+		int newColumnSize = m_rows[column].size();
+		int lastIndex = newColumnSize - 1;
+		int elementTargetRow = m_rows[column][lastIndex].getLetterRow();
+
+		targetRow = elementTargetRow - 1;
+	}
+	else {
+		if (columnSize > 0) {
+			std::cout << lettersToFallIndex.size() << endl;
+			/*if (lettersToFallIndex.size() != 0) {
+				for (int i = 0; i < lettersToFallIndex.size(); i++)
+				{
+					if (lettersToFall[i].getLetterColumn() == column) {
+						int elementTargetRow = lettersToFall[i].getLetterRow();
+
+						targetRow = elementTargetRow - 1;
+					}
+				}
+			}
+			else {
+				int lastIndex = columnSize - 1;
+				int elementTargetRow = m_rows[column][lastIndex].getLetterRow();
+
+				targetRow = elementTargetRow - 1;
+			}*/
+			int lastIndex = columnSize - 1;
+			int elementTargetRow = m_rows[column][lastIndex].getLetterRow();
+
+			targetRow = elementTargetRow - 1;
+
+			//std::cout << "Letter: " << m_aLetters_Normal[randIndex].getLetter() << " ON THE SAME COLUMN " << "Column Size : " << columnSize << " Current target row: " << elementTargetRow << endl;
+		}
+		else {
+			targetRow = 10;
+			//std::cout << "Letter: " << m_aLetters_Normal[randIndex].getLetter() << " NOT ON THE SAME COLUMN " << "Column Size : " << columnSize << " Current target row: " << targetRow << endl;
+		}
+	}
+
+	return targetRow;
+}
+
+int TileRenderer::calculateNewLetter() {
+	int randomIndex = 0;
+	int randNumber = rand() % 100;
+	if (randNumber < vowel_score) {
+		int randomVowel = rand() % MAX_ALPHABET_ENGLISH_VOWELS;
+		randomIndex = vocalPosition[randomVowel];
+		std::cout << "USING VOWELS" << endl;
+	}
+	else {
+		int randomConsonant = rand() % MAX_ALPHABET_ENGLISH_CONSONANTS;
+		randomIndex = consonantPosition[randomConsonant];
+		std::cout << "USING CONSONANTS" << endl;
+	}
+	return randomIndex;
+}
+int TileRenderer::calculateNewVelocity() {
+	int result = (rand() % (1000 - 600)) + 600;
+	return result;
+}
+int TileRenderer::calculateNewColumn() {
+	//TODO anar eliminant columnes ja plenes per obtenir mes probabililtat 
+	int randomColumn = 0;
+
+	//cout << "AVAILABLE ROWS: " << columnAvailable.size() << endl;
+	/*for (int  i = 0; i < columnAvailable.size(); i++)
+	{
+		if (m_rows[columnAvailable[i]].size() == 10) {
+			cout << "ERASING" << i << " COLUMN" << endl;
+			columnErased.push_back(columnAvailable[i]);
+			columnAvailable.erase(columnAvailable.begin() + i);
+			break;
+		}
+	}*/
+	if (columnAvailableIndex < 7) {
+		//randomColumn = rand() % columnAvailable.size();
+		//columnAvailableIndex = columnAvailable[columnAvailableIndex] + 1;
+		columnAvailableIndex++;
+		cout << "INDEX IS " << columnAvailableIndex << " COLUMN" << endl;
+	}
+	else {
+		columnAvailableIndex = 0;
+		//columnAvailableIndex = columnAvailable[columnAvailableIndex] + 1;
+		cout << "INDEX IS RESET " << columnAvailableIndex << " COLUMN" << endl;
+	}
+	return columnAvailableIndex;
 }

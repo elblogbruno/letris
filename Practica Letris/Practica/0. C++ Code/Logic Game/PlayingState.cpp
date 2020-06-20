@@ -1,5 +1,5 @@
 #include "PlayingState.h"
-
+#include <iostream>
 PlayingState::PlayingState() : fontBlanca("data/Fonts/FreeSans.ttf", 30, NFont::Color(255, 255, 255, 255)),fontNegra("data/Fonts/FreeSans.ttf", 30, NFont::Color(0, 0, 0, 255)),
 fonsPlaying("./data/GUI/background_play.png"), timeBar("./data/GUI/Time_Bar.png")
 {
@@ -41,6 +41,15 @@ bool PlayingState::drawPlayingState(int mousePosX, int mousePosY, bool moousePre
 		}
 		if (check) {
 			drawMatrix = true;
+			string word = matriuLletres.getPossibleWord();
+			cout << word << endl;
+			if (word == "AAA") {
+				cout << "WORD WAS FOUND " << endl;
+				matriuLletres.updateMatrixLetters(true,deltaTime);
+			}
+			else {
+				matriuLletres.updateMatrixLetters(false, deltaTime);
+			}
 		}
 	}
 	if (drawTimer) {
