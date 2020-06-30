@@ -11,7 +11,10 @@ class LetrisGame
 		GameOverState gameOverState;
 		MainMenu mainMenuState;
 		PlayingState playingState;
+		DictionaryHandler dictionaryHandler;
+
 		bool esGameOver;
 		int m_estatActual;
+		int m_currentLanguage;
 };
 

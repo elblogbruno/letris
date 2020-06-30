@@ -1,29 +1,6 @@
-﻿  LetrisGame.cpp
+﻿  PlayingState.cpp
 D:\Desktop\Universidad\Metodologia de la Programacion\letris\Practica Letris\Practica\0. C++ Code\Logic Game\joc.h(27,38): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
-  PlayingState.cpp
-D:\Desktop\Universidad\Metodologia de la Programacion\letris\Practica Letris\Practica\0. C++ Code\Logic Game\joc.h(27,38): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
-D:\Desktop\Universidad\Metodologia de la Programacion\letris\Practica Letris\Practica\0. C++ Code\Logic Game\PlayingState.cpp(32,67): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-D:\Desktop\Universidad\Metodologia de la Programacion\letris\Practica Letris\Practica\0. C++ Code\Logic Game\PlayingState.cpp(32,41): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-D:\Desktop\Universidad\Metodologia de la Programacion\letris\Practica Letris\Practica\0. C++ Code\Logic Game\PlayingState.cpp(35,28): warning C4244: '+=': conversión de 'double' a 'float'; posible pérdida de datos
-  TileRenderer.cpp
-D:\Desktop\Universidad\Metodologia de la Programacion\letris\Practica Letris\Practica\0. C++ Code\Logic Game\joc.h(27,38): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
-D:\Desktop\Universidad\Metodologia de la Programacion\letris\Practica Letris\Practica\0. C++ Code\Logic Game\TileRenderer.cpp(12,12): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
-D:\Desktop\Universidad\Metodologia de la Programacion\letris\Practica Letris\Practica\0. C++ Code\Logic Game\TileRenderer.cpp(13,12): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
-D:\Desktop\Universidad\Metodologia de la Programacion\letris\Practica Letris\Practica\0. C++ Code\Logic Game\TileRenderer.cpp(34,37): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-D:\Desktop\Universidad\Metodologia de la Programacion\letris\Practica Letris\Practica\0. C++ Code\Logic Game\TileRenderer.cpp(35,41): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-D:\Desktop\Universidad\Metodologia de la Programacion\letris\Practica Letris\Practica\0. C++ Code\Logic Game\TileRenderer.cpp(74,33): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-D:\Desktop\Universidad\Metodologia de la Programacion\letris\Practica Letris\Practica\0. C++ Code\Logic Game\TileRenderer.cpp(87,22): warning C4018: '<': no coinciden signed/unsigned
-D:\Desktop\Universidad\Metodologia de la Programacion\letris\Practica Letris\Practica\0. C++ Code\Logic Game\TileRenderer.cpp(103,21): warning C4018: '<': no coinciden signed/unsigned
-D:\Desktop\Universidad\Metodologia de la Programacion\letris\Practica Letris\Practica\0. C++ Code\Logic Game\TileRenderer.cpp(112,21): warning C4018: '<': no coinciden signed/unsigned
-D:\Desktop\Universidad\Metodologia de la Programacion\letris\Practica Letris\Practica\0. C++ Code\Logic Game\TileRenderer.cpp(115,22): warning C4018: '<': no coinciden signed/unsigned
-D:\Desktop\Universidad\Metodologia de la Programacion\letris\Practica Letris\Practica\0. C++ Code\Logic Game\TileRenderer.cpp(122,14): warning C4018: '<': no coinciden signed/unsigned
-D:\Desktop\Universidad\Metodologia de la Programacion\letris\Practica Letris\Practica\0. C++ Code\Logic Game\TileRenderer.cpp(141,21): warning C4018: '<': no coinciden signed/unsigned
-D:\Desktop\Universidad\Metodologia de la Programacion\letris\Practica Letris\Practica\0. C++ Code\Logic Game\TileRenderer.cpp(146,33): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-D:\Desktop\Universidad\Metodologia de la Programacion\letris\Practica Letris\Practica\0. C++ Code\Logic Game\TileRenderer.cpp(153,21): warning C4018: '<': no coinciden signed/unsigned
-D:\Desktop\Universidad\Metodologia de la Programacion\letris\Practica Letris\Practica\0. C++ Code\Logic Game\TileRenderer.cpp(156,22): warning C4018: '<': no coinciden signed/unsigned
-D:\Desktop\Universidad\Metodologia de la Programacion\letris\Practica Letris\Practica\0. C++ Code\Logic Game\TileRenderer.cpp(174,20): warning C4018: '<': no coinciden signed/unsigned
-  joc.cpp
-D:\Desktop\Universidad\Metodologia de la Programacion\letris\Practica Letris\Practica\0. C++ Code\Logic Game\joc.h(27,38): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
-D:\Desktop\Universidad\Metodologia de la Programacion\letris\Practica Letris\Practica\0. C++ Code\Logic Game\joc.cpp(30,7): warning C4101: 'esGameOver': variable local sin referencia
-  Generando código...
+D:\Desktop\Universidad\Metodologia de la Programacion\letris\Practica Letris\Practica\0. C++ Code\Logic Game\PlayingState.cpp(39,75): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Desktop\Universidad\Metodologia de la Programacion\letris\Practica Letris\Practica\0. C++ Code\Logic Game\PlayingState.cpp(39,47): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Desktop\Universidad\Metodologia de la Programacion\letris\Practica Letris\Practica\0. C++ Code\Logic Game\PlayingState.cpp(42,31): warning C4244: '+=': conversión de 'double' a 'float'; posible pérdida de datos
   LetrisGame.vcxproj -> D:\Desktop\Universidad\Metodologia de la Programacion\letris\Practica Letris\Practica\2. Platforms\0. Windows Desktop\\Program\LetrisGame.exe

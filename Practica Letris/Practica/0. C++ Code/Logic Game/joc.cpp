@@ -21,7 +21,6 @@ void joc()
 
 	
 	LetrisGame game = LetrisGame();
-
 	
 	Uint64 NOW = SDL_GetPerformanceCounter();
 	Uint64 LAST = 0;

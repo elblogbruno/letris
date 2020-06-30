@@ -17,7 +17,7 @@ class Tile
 		Tile(const Tile& v);
 		Tile& operator=(const Tile& v); //Creacio del operador de assignació per arreglar possibles problemes al fer push_back en el vector i la copia dels sprites.
 
-
+		bool operator==(Tile& v);
 
 		int getLetterRow() { return m_row; }; //getter de la fila de la lletra
 		int getLetterColumn() { return m_column; }; //getter de la columna de la lletra
@@ -31,9 +31,6 @@ class Tile
 
 		bool updateLetterStatus(int mousePosX, int mousePosY, bool clicked) { return m_lletra.updateButtonRadioButton(mousePosX, mousePosY, clicked); }; //crida a la funcio del button associat al tile que permet trobar si ha estat clickat o no
 
-		/*string getPathOn() { return m_pathOn; };
-		string getPathOff() { return m_pathOff; };*/
-
 		void drawAuxiliar(int column); //em creat un sprite auxiliar per a dibuixar en la part inferior de la taula i aquesta funció ajuda a que li diguem la seva columna i ho dibuixi, la fila ja la coneixem sera sempre la mateixa.
 
 		bool hasBeenSelected() { return m_hasBeenSelected; }; //Aquest bolea retorna si ha estat seleccuionat el tile cosa, que fa que el tile no arribi a funcionar exactament com un radiobutton que sempre estaria a true, si no que es torna true nomes quan ja sigut seleccionat.
@@ -41,17 +38,16 @@ class Tile
 
 		void setActive(bool active);
 
+
 	private:
 		Button m_lletra;
 		bool m_reachEnd;
 		bool m_hasBeenSelected;
-		
-		//string m_pathOn;
-		//string m_pathOff;
 
 		Sprite m_aux_sprite;
 		int m_row;
 		int m_column;
+		int m_index;
 		bool m_active;
 };
 

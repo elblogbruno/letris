@@ -66,7 +66,7 @@ bool Button::updateButton(int mousePosX, int mousePosY, bool mousePressed) {
 	return m_shouldUpdate;
 }
 
-Button::Button() : currentFont("data/Fonts/FreeSans.ttf", 30, NFont::Color(255, 255, 255, 255))
+Button::Button() : m_currentFont("data/Fonts/FreeSans.ttf", 30, NFont::Color(255, 255, 255, 255))
 {
 }
 Button::Button(int x, int y, int width, int height, string tag, const string& pathOn, const string& pathOff,int id) {
@@ -135,8 +135,8 @@ void Button::drawButton() {
 		default:
 			break;
 	}
-	if (m_containsTitle) {
-		currentFont.draw(getButtonX() / 2, getButtonY()/2, NFont::Scale(0.85f), getButtonTitle().c_str());
+	if (m_containsTitle) { //si el boto conte un titol el dibuixem. 
+		m_currentFont.draw(getButtonX() + 35, getButtonY()+10, NFont::Scale(1.0f), getButtonTitle().c_str());
 	}
 }
 

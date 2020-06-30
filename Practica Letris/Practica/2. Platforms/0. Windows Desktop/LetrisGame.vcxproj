@@ -157,12 +157,14 @@
     <ClCompile Include="..\..\0. C++ Code\Graphic Lib\sprites.cpp" />
     <ClCompile Include="..\..\0. C++ Code\Graphic Lib\stb_vorbis.cpp" />
     <ClCompile Include="..\..\0. C++ Code\Graphic Lib\video.cpp" />
+    <ClCompile Include="..\..\0. C++ Code\Logic Game\DictionaryHandler.cpp" />
     <ClCompile Include="..\..\0. C++ Code\Logic Game\GameOverState.cpp" />
     <ClCompile Include="..\..\0. C++ Code\Logic Game\joc.cpp" />
     <ClCompile Include="..\..\0. C++ Code\Logic Game\LetrisGame.cpp" />
     <ClCompile Include="..\..\0. C++ Code\Logic Game\main.cpp" />
     <ClCompile Include="..\..\0. C++ Code\Logic Game\Button.cpp" />
     <ClCompile Include="..\..\0. C++ Code\Logic Game\MainMenu.cpp" />
+    <ClCompile Include="..\..\0. C++ Code\Logic Game\PauseMenu.cpp" />
     <ClCompile Include="..\..\0. C++ Code\Logic Game\PlayingState.cpp" />
     <ClCompile Include="..\..\0. C++ Code\Logic Game\Tile.cpp" />
     <ClCompile Include="..\..\0. C++ Code\Logic Game\TileRenderer.cpp" />
@@ -182,6 +184,7 @@
     <ClInclude Include="..\..\0. C++ Code\Graphic Lib\sprites.h" />
     <ClInclude Include="..\..\0. C++ Code\Graphic Lib\stb_vorbis.h" />
     <ClInclude Include="..\..\0. C++ Code\Graphic Lib\video.h" />
+    <ClInclude Include="..\..\0. C++ Code\Logic Game\DictionaryHandler.h" />
     <ClInclude Include="..\..\0. C++ Code\Logic Game\GameOverState.h" />
     <ClInclude Include="..\..\0. C++ Code\Logic Game\joc.h" />
     <ClInclude Include="..\..\0. C++ Code\Logic Game\Button.h">
@@ -192,6 +195,7 @@
     <ClInclude Include="..\..\0. C++ Code\Logic Game\MainMenu.h">
       <DeploymentContent>false</DeploymentContent>
     </ClInclude>
+    <ClInclude Include="..\..\0. C++ Code\Logic Game\PauseMenu.h" />
     <ClInclude Include="..\..\0. C++ Code\Logic Game\PlayingState.h" />
     <ClInclude Include="..\..\0. C++ Code\Logic Game\Tile.h" />
     <ClInclude Include="..\..\0. C++ Code\Logic Game\TileRenderer.h" />

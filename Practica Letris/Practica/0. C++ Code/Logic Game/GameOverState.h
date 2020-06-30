@@ -9,8 +9,7 @@ public:
 	GameOverState();
 	void drawGameOverState(int &m_estatActual, bool &esGameOver, double &deltaTime);
 private:
-	Sprite fonsFinalPartida;
-	//bool esGameOver;
-	float timerGameOver;
+	Sprite m_fonsFinalPartida;
+	float m_timerGameOver;
 };
 

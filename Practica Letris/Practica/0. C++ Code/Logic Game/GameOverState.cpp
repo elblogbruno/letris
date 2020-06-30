@@ -1,22 +1,20 @@
 #include "GameOverState.h"
 
-GameOverState::GameOverState() : fonsFinalPartida("./data/GUI/GameOver.png")
+GameOverState::GameOverState() : m_fonsFinalPartida("./data/GUI/GameOver.png")
 {
-	//esGameOver = true;
-	timerGameOver = 0;
+	m_timerGameOver = 0;
 }
 
 
 void GameOverState::drawGameOverState(int &m_estatActual, bool &esGameOver,double &deltaTime)
 {
-	fonsFinalPartida.draw(0, 0);
-	if (esGameOver) {
-		timerGameOver += deltaTime;
-		//fontNegra.draw(200, 50, NFont::Scale(0.85f), "%d", (int)timerGameOver);
+	m_fonsFinalPartida.draw(0, 0);
+	if (esGameOver) { //si hem perdut realment la partida inicia el contador de espera.
+		m_timerGameOver += deltaTime;
 	}
-	if (timerGameOver > 5.0f) {
+	if (m_timerGameOver > 5.0f) { //si han passat els 5 segons de espera,tornem al menu inicial
 		esGameOver = false;
-		timerGameOver = 0;
+		m_timerGameOver = 0;
 		m_estatActual = MAIN_MENU;
 	}
 }
